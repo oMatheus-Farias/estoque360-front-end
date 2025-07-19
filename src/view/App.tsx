@@ -1,8 +1,12 @@
+import { BrowserRouter } from 'react-router-dom';
+
+import AppRoutes from './Routes';
+
 function App() {
   return (
-    <div>
-      <p>estoque 360</p>
-    </div>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 
