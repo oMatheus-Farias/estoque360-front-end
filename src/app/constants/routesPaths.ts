@@ -1,3 +1,8 @@
 export const ROUTES_PATHS = {
-  login: '/auth/login',
+  auth: {
+    login: '/auth/login',
+  },
+  authenticated: {
+    dashboard: '/',
+  },
 };
