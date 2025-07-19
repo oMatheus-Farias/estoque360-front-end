@@ -1,3 +1,4 @@
+import './app/lib/dynamicImportErrorListener.ts';
 import './view/index.css';
 
 import { StrictMode } from 'react';
