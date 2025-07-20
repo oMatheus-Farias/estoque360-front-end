@@ -175,7 +175,10 @@
   * {
     @apply border-border outline-ring/50 font-family-sans;
   }
+  html {
+    @apply h-full w-full scroll-smooth;
+  }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground h-full w-full antialiased;
   }
 }
