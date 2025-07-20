@@ -92,7 +92,7 @@ export function LoginPage() {
       >
         <div className="flex-1 px-12">
           <div className="flex h-full w-full flex-col justify-center gap-2">
-            <h2 className="text-4xl font-bold text-white">Dê fim ao caos do estoque.</h2>
+            <h2 className="text-4xl font-bold text-white">Dê fim ao caos do estoque</h2>
             <p className="text-base text-white">
               Com Estoque360, você tem controle completo de produtos, movimentações e transferências entre unidades com apenas alguns cliques.
             </p>
