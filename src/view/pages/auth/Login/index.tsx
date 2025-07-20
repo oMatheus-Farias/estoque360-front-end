@@ -73,6 +73,10 @@ export function LoginPage() {
                 Login com Google
               </Button>
             </div>
+
+            <Link to="#" className="hover:text-estoque360-gray-100 mt-8 text-center text-sm text-white transition-all">
+              Não possui uma conta? Registre-se
+            </Link>
           </form>
         </div>
       </div>
