@@ -7,7 +7,7 @@ import GlobalSuspense from './components/GlobalSuspense';
 
 const Login = lazy(() => import('../view/containers/auth/LoginContainer'));
 
-export default function AppRoutes() {
+export function AppRoutes() {
   return (
     <Suspense fallback={<GlobalSuspense />}>
       <Routes>

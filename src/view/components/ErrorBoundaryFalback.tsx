@@ -1,6 +1,6 @@
 import { ROUTES_PATHS } from '@/app/constants/routesPaths';
 
-export default function ErrorBoundaryFallback() {
+export function ErrorBoundaryFallback() {
   return (
     <div className="flex h-screen w-full items-center justify-center">
       <div className="flex flex-col items-center gap-10">
