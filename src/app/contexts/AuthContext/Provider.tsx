@@ -2,9 +2,9 @@ import { useLayoutEffect, useState } from 'react';
 
 import { STORAGE_KEYS } from '@/app/constants/storageKeys';
 import { useMeDetails } from '@/app/hooks/accountHooks/useMeDetails';
-import { useAuthenticatedWithCredentials } from '@/app/hooks/authHooks/useAuthenticatedWithCredentials';
-import { useLogOut } from '@/app/hooks/authHooks/useLogOut';
 import { useRefreshToken } from '@/app/hooks/authHooks/useRefreshToken';
+import { useSignInWithCredentials } from '@/app/hooks/authHooks/useSignInWithCredentials';
+import { useSignOut } from '@/app/hooks/authHooks/useSignOut';
 import type { AuthService } from '@/app/service/AuthService';
 import { httpClient } from '@/app/service/httpClient';
 
@@ -18,9 +18,9 @@ export function AuthProvider({ children }: IAuthProviderProps) {
   const [signedIn, setSignedIn] = useState(() => {
     return !!localStorage.getItem(STORAGE_KEYS.ACCESS_TOKEN);
   });
-  const { authenticatedWithCredentialsFn } = useAuthenticatedWithCredentials();
+  const { signInWithCredentialsFn } = useSignInWithCredentials();
   const { refreshTokenFn } = useRefreshToken();
-  const { logOutFn, isPending: logOutIsPending } = useLogOut();
+  const { signOutFn, isPending: logOutIsPending } = useSignOut();
   const { meDetails, isLoading: meDetailsIsLoading } = useMeDetails();
 
   useLayoutEffect(() => {
@@ -69,8 +69,8 @@ export function AuthProvider({ children }: IAuthProviderProps) {
     };
   }, [refreshTokenFn]);
 
-  async function handleAuthenticatedWithCredentials({ email, password }: AuthService.AuthenticatedWithCredentialsInput) {
-    const { token, refreshToken } = await authenticatedWithCredentialsFn({ email, password });
+  async function handleAuthenticatedWithCredentials({ email, password }: AuthService.SignInWithCredentialsInput) {
+    const { token, refreshToken } = await signInWithCredentialsFn({ email, password });
 
     localStorage.setItem(STORAGE_KEYS.ACCESS_TOKEN, JSON.stringify(token));
     localStorage.setItem(STORAGE_KEYS.REFRESH_TOKEN, JSON.stringify(refreshToken));
@@ -78,7 +78,7 @@ export function AuthProvider({ children }: IAuthProviderProps) {
   }
 
   async function handleLogOut() {
-    await logOutFn();
+    await signOutFn();
     localStorage.removeItem(STORAGE_KEYS.ACCESS_TOKEN);
     localStorage.removeItem(STORAGE_KEYS.REFRESH_TOKEN);
     setSignedIn(false);

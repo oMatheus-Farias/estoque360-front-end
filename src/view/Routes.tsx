@@ -5,13 +5,13 @@ import { ROUTES_PATHS } from '@/app/constants/routesPaths';
 
 import GlobalSuspense from './components/GlobalSuspense';
 
-const Login = lazy(() => import('../view/containers/auth/LoginContainer'));
+const SignIn = lazy(() => import('./containers/auth/SignInContainer'));
 
 export function AppRoutes() {
   return (
     <Suspense fallback={<GlobalSuspense />}>
       <Routes>
-        <Route path={ROUTES_PATHS.auth.login} element={<Login />} />
+        <Route path={ROUTES_PATHS.auth.signIn} element={<SignIn />} />
       </Routes>
     </Suspense>
   );

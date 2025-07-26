@@ -8,7 +8,7 @@ import { Button } from '@/view/components/ui/Button';
 import { Input } from '@/view/components/ui/Input';
 import { Label } from '@/view/components/ui/Label';
 
-export function LoginPage() {
+export function SignInPage() {
   return (
     <div className="bg-estoque360-primary-500 flex h-screen w-full items-center justify-center px-5 xl:px-0">
       <div className="w-full xl:flex-1">

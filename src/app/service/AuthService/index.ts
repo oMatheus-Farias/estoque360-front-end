@@ -1,8 +1,8 @@
 import { httpClient } from '../httpClient';
 
 export class AuthService {
-  static async authenticatedWithCredentials(data: AuthService.AuthenticatedWithCredentialsInput) {
-    const { data: responseData } = await httpClient.post<AuthService.AuthenticatedWithCredentialsOutput>('/sessions/credentials', {
+  static async signInWithCredentials(data: AuthService.SignInWithCredentialsInput) {
+    const { data: responseData } = await httpClient.post<AuthService.SignInWithCredentialsOutput>('/sessions/credentials', {
       email: data.email,
       password: data.password,
     });
@@ -18,17 +18,17 @@ export class AuthService {
     return responseData;
   }
 
-  static async logOut() {
+  static async signOut() {
     await httpClient.post('/sessions/sign-out');
   }
 }
 
 export namespace AuthService {
-  export type AuthenticatedWithCredentialsInput = {
+  export type SignInWithCredentialsInput = {
     email: string;
     password: string;
   };
-  export type AuthenticatedWithCredentialsOutput = {
+  export type SignInWithCredentialsOutput = {
     token: string;
     refreshToken: string;
   };
