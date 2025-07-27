@@ -161,13 +161,13 @@
   --chart-3: var(--color-estoque360-gray-400);
   --chart-4: var(--color-estoque360-detail01-600);
   --chart-5: var(--color-estoque360-detail02-600);
-  --sidebar: var(--color-estoque360-primary-800);
+  --sidebar: var(--color-estoque360-muted-foreground-500);
   --sidebar-foreground: var(--color-estoque360-primary-100);
   --sidebar-primary: var(--color-estoque360-detail01-500);
   --sidebar-primary-foreground: var(--color-estoque360-primary-900);
   --sidebar-accent: var(--color-estoque360-gray-800);
   --sidebar-accent-foreground: var(--color-estoque360-primary-100);
-  --sidebar-border: var(--color-estoque360-gray-700);
+  --sidebar-border: var(--color-estoque360-gray-600);
   --sidebar-ring: var(--color-estoque360-detail01-500);
 }
 
