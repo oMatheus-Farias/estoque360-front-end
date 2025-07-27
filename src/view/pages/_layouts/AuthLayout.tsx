@@ -4,7 +4,7 @@ import { ROUTES_PATHS } from '@/app/constants/routesPaths';
 import { useAuth } from '@/app/hooks/authHooks/useAuth';
 import authAvatars from '@/assets/authAvatars.webp';
 import authImage from '@/assets/authImage.webp';
-import { LogoIcon } from '@/view/components/LogoIcon';
+import { LogoIconWithName } from '@/view/components/LogoIconWithName';
 
 export function AuthLayout() {
   const { signedIn } = useAuth();
@@ -17,7 +17,7 @@ export function AuthLayout() {
     <div className="bg-estoque360-primary-500 flex h-screen w-full items-center justify-center px-5 xl:px-0">
       <div className="w-full xl:flex-1">
         <div className="flex flex-col items-center gap-8">
-          <LogoIcon />
+          <LogoIconWithName />
 
           <div className="flex flex-col items-center gap-2">
             <h1 className="text-2xl font-bold text-white">Faça login na sua conta</h1>

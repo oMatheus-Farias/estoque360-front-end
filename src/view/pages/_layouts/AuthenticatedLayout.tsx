@@ -2,6 +2,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 import { ROUTES_PATHS } from '@/app/constants/routesPaths';
 import { useAuth } from '@/app/hooks/authHooks/useAuth';
+import { HeaderDesktop } from '@/view/components/HeaderDestktop';
 import { Sidebar } from '@/view/components/Sidebar';
 
 export function AuthenticatedLayout() {
@@ -17,7 +18,7 @@ export function AuthenticatedLayout() {
       <div className="flex h-full">
         <Sidebar />
         <div className="flex h-full w-full flex-col lg:ml-52">
-          Header Desktop
+          <HeaderDesktop />
           <main className="flex-1">
             <Outlet />
           </main>
