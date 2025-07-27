@@ -126,7 +126,7 @@ export function SignInPage({ form, handleSignInWithCredentials }: ISignInPagePro
             <Button
               type="button"
               disabled={isPending}
-              className="border-estoque360-gray-600 bg-estoque360-muted-foreground-500 hover:bg-estoque360-muted-foreground-500/40 flex h-10 w-full cursor-pointer items-center gap-2 rounded-[10px] border transition-all duration-200"
+              className="border-estoque360-gray-600 bg-estoque360-muted-foreground-500 hover:bg-estoque360-muted-foreground-500/40 flex h-10 w-full cursor-pointer items-center gap-2 rounded-[10px] border text-white transition-all duration-200"
             >
               <GoogleIcon />
               Login com Google

@@ -69,7 +69,7 @@ export function AuthProvider({ children }: IAuthProviderProps) {
     };
   }, [refreshTokenFn]);
 
-  async function handleSignInWithCredentials({ email, password }: AuthService.SignInWithCredentialsInput) {
+  async function signInWithCredentials({ email, password }: AuthService.SignInWithCredentialsInput) {
     const { token, refreshToken } = await signInWithCredentialsFn({ email, password });
 
     localStorage.setItem(STORAGE_KEYS.ACCESS_TOKEN, JSON.stringify(token));
@@ -77,7 +77,7 @@ export function AuthProvider({ children }: IAuthProviderProps) {
     setSignedIn(true);
   }
 
-  async function handleSignOut() {
+  async function signOut() {
     await signOutFn();
     localStorage.removeItem(STORAGE_KEYS.ACCESS_TOKEN);
     localStorage.removeItem(STORAGE_KEYS.REFRESH_TOKEN);
@@ -86,8 +86,8 @@ export function AuthProvider({ children }: IAuthProviderProps) {
 
   const authContextValue: IAuthContextValue = {
     signedIn,
-    handleSignInWithCredentials,
-    handleSignOut,
+    signInWithCredentials: signInWithCredentials,
+    signOut: signOut,
     meDetails,
     logOutIsPending,
     meDetailsIsLoading,

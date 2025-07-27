@@ -5,8 +5,8 @@ import type { AuthService } from '@/app/service/AuthService';
 
 export interface IAuthContextValue {
   signedIn: boolean;
-  handleSignInWithCredentials: (data: AuthService.SignInWithCredentialsInput) => Promise<void>;
-  handleSignOut: () => Promise<void>;
+  signInWithCredentials: (data: AuthService.SignInWithCredentialsInput) => Promise<void>;
+  signOut: () => Promise<void>;
   meDetails: AccountService.MeDetailsOutput | undefined;
   logOutIsPending: boolean;
   meDetailsIsLoading: boolean;
