@@ -2,6 +2,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 import { ROUTES_PATHS } from '@/app/constants/routesPaths';
 import { useAuth } from '@/app/hooks/authHooks/useAuth';
+import { Footer } from '@/view/components/Footer';
 import { HeaderDesktop } from '@/view/components/HeaderDestktop';
 import { Sidebar } from '@/view/components/Sidebar';
 
@@ -22,7 +23,9 @@ export function AuthenticatedLayout() {
           <main className="flex-1">
             <Outlet />
           </main>
-          <div className="mt-8">Footer</div>
+          <div className="mt-8">
+            <Footer />
+          </div>
         </div>
       </div>
     </div>
