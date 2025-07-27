@@ -4,5 +4,9 @@ export const ROUTES_PATHS = {
   },
   authenticated: {
     dashboard: '/',
+    products: '/products',
+    stock: '/stock',
+    movements: '/movements',
+    adjustments: '/adjustments',
   },
 };
