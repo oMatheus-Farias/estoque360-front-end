@@ -1,7 +1,6 @@
 import { useLayoutEffect, useState } from 'react';
 
 import { STORAGE_KEYS } from '@/app/constants/storageKeys';
-import { useMeDetails } from '@/app/hooks/accountHooks/useMeDetails';
 import { useRefreshToken } from '@/app/hooks/authHooks/useRefreshToken';
 import { useSignInWithCredentials } from '@/app/hooks/authHooks/useSignInWithCredentials';
 import { useSignOut } from '@/app/hooks/authHooks/useSignOut';
@@ -21,7 +20,6 @@ export function AuthProvider({ children }: IAuthProviderProps) {
   const { signInWithCredentialsFn } = useSignInWithCredentials();
   const { refreshTokenFn } = useRefreshToken();
   const { signOutFn, isPending: logOutIsPending } = useSignOut();
-  const { meDetails, isLoading: meDetailsIsLoading } = useMeDetails();
 
   useLayoutEffect(() => {
     const interceptorId = httpClient.interceptors.request.use((config) => {
@@ -88,9 +86,7 @@ export function AuthProvider({ children }: IAuthProviderProps) {
     signedIn,
     signInWithCredentials: signInWithCredentials,
     signOut: signOut,
-    meDetails,
     logOutIsPending,
-    meDetailsIsLoading,
   };
 
   return <AuthContext.Provider value={authContextValue}>{children}</AuthContext.Provider>;

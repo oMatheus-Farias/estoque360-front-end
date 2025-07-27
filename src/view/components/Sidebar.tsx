@@ -6,9 +6,9 @@ import { NavLink } from './NavLink';
 
 export function Sidebar() {
   return (
-    <aside className="bg-sidebar fixed z-10 hidden h-full w-48 flex-col px-2.5 py-4 lg:flex">
+    <aside className="bg-sidebar fixed z-10 hidden h-full w-52 flex-col px-2.5 py-4 lg:flex">
       <div className="border-sidebar-border flex w-full items-center gap-2 border-b pb-4">
-        <div className="bg-estoque360-primary-900 border-estoque360-detail01-500 flex items-center justify-center rounded-md border p-3">
+        <div className="bg-estoque360-primary-900 border-estoque360-detail01-900 flex items-center justify-center rounded-md border p-3">
           <Building2 size={12} />
         </div>
         <div className="flex flex-col">
