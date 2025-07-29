@@ -75,6 +75,22 @@ export function AuthProvider({ children }: IAuthProviderProps) {
     setSignedIn(true);
   }
 
+  async function startSignInWithGoogle() {
+    const { data } = await httpClient.get<{ authUrl: string; message: string }>('/sessions/google');
+
+    if (!data.authUrl) {
+      throw new Error('Failed to initiate Google sign-in');
+    }
+
+    window.location.href = data.authUrl;
+  }
+
+  function signInWithGoogleCallback(token: string, refreshToken: string) {
+    localStorage.setItem(STORAGE_KEYS.ACCESS_TOKEN, JSON.stringify(token));
+    localStorage.setItem(STORAGE_KEYS.REFRESH_TOKEN, JSON.stringify(refreshToken));
+    setSignedIn(true);
+  }
+
   async function signOut() {
     await signOutFn();
     localStorage.removeItem(STORAGE_KEYS.ACCESS_TOKEN);
@@ -84,8 +100,10 @@ export function AuthProvider({ children }: IAuthProviderProps) {
 
   const authContextValue: IAuthContextValue = {
     signedIn,
-    signInWithCredentials: signInWithCredentials,
-    signOut: signOut,
+    signInWithCredentials,
+    startSignInWithGoogle,
+    signInWithGoogleCallback,
+    signOut,
     logOutIsPending,
   };
 

@@ -1,7 +1,7 @@
 import { Link, Navigate, Outlet } from 'react-router-dom';
 
 import { ROUTES_PATHS } from '@/app/constants/routesPaths';
-import { useAuth } from '@/app/hooks/authHooks/useAuth';
+import { useAuth } from '@/app/hooks/useAuth';
 import authAvatars from '@/assets/authAvatars.webp';
 import authImage from '@/assets/authImage.webp';
 import { LogoIconWithName } from '@/view/components/LogoIconWithName';

@@ -1,6 +1,7 @@
 export const ROUTES_PATHS = {
   auth: {
     signIn: '/auth/sign-in',
+    googleCallback: '/auth/google/callback',
   },
   authenticated: {
     dashboard: '/',

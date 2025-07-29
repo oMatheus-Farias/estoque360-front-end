@@ -9,6 +9,7 @@ import { AuthLayout } from './pages/_layouts/AuthLayout';
 
 // Auth
 const SignIn = lazy(() => import('./containers/auth/SignInContainer'));
+const GoogleCallback = lazy(() => import('./containers/auth/GoogleCallbackContainer'));
 
 // Authenticated
 const Dashboard = lazy(() => import('./containers/authenticated/DashboardContainer'));
@@ -23,6 +24,7 @@ export function AppRoutes() {
       <Routes>
         <Route element={<AuthLayout />}>
           <Route path={ROUTES_PATHS.auth.signIn} element={<SignIn />} />
+          <Route path={ROUTES_PATHS.auth.googleCallback} element={<GoogleCallback />} />
         </Route>
 
         <Route element={<AuthenticatedLayout />}>

@@ -14,9 +14,11 @@ import { Label } from '@/view/components/ui/Label';
 interface ISignInPageProps {
   form: ReturnType<typeof useForm<AuthService.SignInWithCredentialsInput>>;
   handleSignInWithCredentials: (data: AuthService.SignInWithCredentialsInput) => void;
+  handleSignInWithGoogle: () => void;
+  signInWithGoogleIsLoading: boolean;
 }
 
-export function SignInPage({ form, handleSignInWithCredentials }: ISignInPageProps) {
+export function SignInPage({ form, handleSignInWithCredentials, handleSignInWithGoogle, signInWithGoogleIsLoading }: ISignInPageProps) {
   const [visiblePassword, setVisiblePassword] = useState(false);
   const isPending = form.formState.isSubmitting;
 
@@ -125,11 +127,18 @@ export function SignInPage({ form, handleSignInWithCredentials }: ISignInPagePro
 
             <Button
               type="button"
-              disabled={isPending}
+              disabled={signInWithGoogleIsLoading}
+              onClick={handleSignInWithGoogle}
               className="border-estoque360-gray-600 bg-estoque360-muted-foreground-500 hover:bg-estoque360-muted-foreground-500/40 flex h-10 w-full cursor-pointer items-center gap-2 rounded-[10px] border text-white transition-all duration-200"
             >
-              <GoogleIcon />
-              Login com Google
+              {signInWithGoogleIsLoading ? (
+                <LoaderCircle aria-label="Carregando" className="animate-spin" />
+              ) : (
+                <>
+                  <GoogleIcon />
+                  Login com Google
+                </>
+              )}
             </Button>
           </div>
 

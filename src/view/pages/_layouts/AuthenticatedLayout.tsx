@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
 import { ROUTES_PATHS } from '@/app/constants/routesPaths';
-import { useAuth } from '@/app/hooks/authHooks/useAuth';
+import { useAuth } from '@/app/hooks/useAuth';
 import { Footer } from '@/view/components/Footer';
 import { HeaderDesktop } from '@/view/components/HeaderDestktop';
 import { Sidebar } from '@/view/components/Sidebar';
