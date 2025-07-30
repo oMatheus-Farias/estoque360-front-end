@@ -1,7 +1,8 @@
-import { Building2, User } from 'lucide-react';
+import { Building2 } from 'lucide-react';
 
 import { NAVIGATION_LINKS } from '@/app/constants/navigationLinks';
 
+import { AccountSettingsDropdownMenu } from './AccountDropdownMenu';
 import { NavLink } from './NavLink';
 
 export function Sidebar() {
@@ -33,15 +34,7 @@ export function Sidebar() {
         ))}
       </nav>
 
-      <div className="flex w-full items-center gap-2">
-        <div className="bg-estoque360-primary-900 flex items-center justify-center rounded-full border p-3">
-          <User size={12} />
-        </div>
-        <div className="flex flex-col">
-          <span className="text-estoque360-primary-100 text-sm font-medium">John Doe</span>
-          <span className="text-estoque360-primary-300 text-xs font-normal">johmdoe@email.com</span>
-        </div>
-      </div>
+      <AccountSettingsDropdownMenu />
     </aside>
   );
 }

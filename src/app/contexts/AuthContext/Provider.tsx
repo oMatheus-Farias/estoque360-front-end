@@ -19,7 +19,7 @@ export function AuthProvider({ children }: IAuthProviderProps) {
   });
   const { signInWithCredentialsFn } = useSignInWithCredentials();
   const { refreshTokenFn } = useRefreshToken();
-  const { signOutFn, isPending: logOutIsPending } = useSignOut();
+  const { signOutFn, isPending: signOutIsPending } = useSignOut();
 
   useLayoutEffect(() => {
     const interceptorId = httpClient.interceptors.request.use((config) => {
@@ -104,7 +104,7 @@ export function AuthProvider({ children }: IAuthProviderProps) {
     startSignInWithGoogle,
     signInWithGoogleCallback,
     signOut,
-    logOutIsPending,
+    signOutIsPending,
   };
 
   return <AuthContext.Provider value={authContextValue}>{children}</AuthContext.Provider>;

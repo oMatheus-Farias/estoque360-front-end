@@ -150,7 +150,7 @@
   --secondary-foreground: var(--color-estoque360-gray-100);
   --muted: var(--color-estoque360-gray-900);
   --muted-foreground: var(--color-estoque360-muted-foreground-200);
-  --accent: var(--color-estoque360-detail02-600);
+  --accent: color-mix(in srgb, var(--color-estoque360-detail02-500) 80%, transparent);
   --accent-foreground: var(--color-estoque360-primary-50);
   --destructive: #ef4444;
   --border: var(--color-estoque360-gray-700);

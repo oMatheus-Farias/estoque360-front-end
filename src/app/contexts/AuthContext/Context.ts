@@ -8,7 +8,7 @@ export interface IAuthContextValue {
   startSignInWithGoogle: () => Promise<void>;
   signInWithGoogleCallback: (token: string, refreshToken: string) => void;
   signOut: () => Promise<void>;
-  logOutIsPending: boolean;
+  signOutIsPending: boolean;
 }
 
 export const AuthContext = createContext({} as IAuthContextValue);
