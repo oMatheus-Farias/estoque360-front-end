@@ -1,6 +1,7 @@
-import { Sidebar, SwatchBook } from 'lucide-react';
+import { Sidebar } from 'lucide-react';
 
 import { LogoIcon } from './LogoIcon';
+import { ModeToggleTheme } from './ModeToggleTheme';
 import { Separator } from './ui/Separator';
 
 export function HeaderDesktop() {
@@ -27,9 +28,7 @@ export function HeaderDesktop() {
         </div>
       </div>
 
-      <div className="border-border flex aspect-square w-8 items-center justify-center rounded-[10px] border">
-        <SwatchBook size={16} className="text-estoque360-primary-100" />
-      </div>
+      <ModeToggleTheme />
     </header>
   );
 }

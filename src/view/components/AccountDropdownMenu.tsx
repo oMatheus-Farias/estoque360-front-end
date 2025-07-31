@@ -20,7 +20,7 @@ export function AccountSettingsDropdownMenu() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger className="data-[state=open]:bg-sidebar-border/50" asChild>
         <button className="hover:bg-sidebar-border/50 flex w-full items-center gap-2 rounded-md p-2 transition-all duration-150 ease-linear outline-none">
           <div className="bg-estoque360-primary-900 flex items-center justify-center rounded-full border p-3">
             <User size={12} />
