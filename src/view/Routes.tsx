@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { ROUTES_PATHS } from '@/app/constants/routesPaths';
+import { AccountProvider } from '@/app/contexts/AccountContext/Provider';
 
 import GlobalSuspense from './components/GlobalSuspense';
 import { AuthenticatedLayout } from './pages/_layouts/AuthenticatedLayout';
@@ -27,7 +28,13 @@ export function AppRoutes() {
           <Route path={ROUTES_PATHS.auth.googleCallback} element={<GoogleCallback />} />
         </Route>
 
-        <Route element={<AuthenticatedLayout />}>
+        <Route
+          element={
+            <AccountProvider>
+              <AuthenticatedLayout />
+            </AccountProvider>
+          }
+        >
           <Route path={ROUTES_PATHS.authenticated.dashboard} element={<Dashboard />} />
           <Route path={ROUTES_PATHS.authenticated.products} element={<Products />} />
           <Route path={ROUTES_PATHS.authenticated.stock} element={<Stock />} />

@@ -1,6 +1,6 @@
 import { ArrowBigRight, LoaderCircle, User } from 'lucide-react';
 
-import { useAuth } from '@/app/hooks/useAuth';
+import { useAuth } from '@/app/hooks/authHooks/useAuth';
 
 import {
   DropdownMenu,

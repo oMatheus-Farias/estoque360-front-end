@@ -5,7 +5,7 @@ import { toast } from 'sonner';
 import type { z } from 'zod';
 
 import { env } from '@/app/config/envConfig';
-import { useAuth } from '@/app/hooks/useAuth';
+import { useAuth } from '@/app/hooks/authHooks/useAuth';
 import { signInSchemaValidator } from '@/app/validators/zod/auth/signInSchemaValidator';
 import { SignInPage } from '@/view/pages/auth/SignIn';
 

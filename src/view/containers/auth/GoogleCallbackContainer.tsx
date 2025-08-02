@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import { ROUTES_PATHS } from '@/app/constants/routesPaths';
-import { useAuth } from '@/app/hooks/useAuth';
+import { useAuth } from '@/app/hooks/authHooks/useAuth';
 import { GoogleCallbackPage } from '@/view/pages/auth/GoogleCallback';
 
 export default function GoogleCallbackContainer() {

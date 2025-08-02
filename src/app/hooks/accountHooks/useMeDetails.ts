@@ -3,10 +3,10 @@ import { useQuery } from '@tanstack/react-query';
 import { AccountService } from '@/app/service/AccountService';
 
 export function useMeDetails() {
-  const { data: meDetails, isLoading } = useQuery({
+  const { data: meDetails, isLoading: isLoadingMeDetails } = useQuery({
     queryKey: ['meDetails'],
     queryFn: AccountService.meDetails,
   });
 
-  return { meDetails, isLoading };
+  return { meDetails, isLoadingMeDetails };
 }
